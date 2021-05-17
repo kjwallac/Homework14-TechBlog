@@ -3,33 +3,47 @@ const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-  try {
-    const newPost = await Post.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+  const body = req.body;
 
-    res.status(200).json(newPost);
+  try {
+    const newPost = await Post.create({ ...body, user_Id: req.session.user_Id });
+    res.json(newPost);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.destroy({
+    const [affectedRows] = Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
-    if (!postData) {
-      res.status(404).json({ message: 'No Post found with this id!' });
-      return;
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
     }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-    res.status(200).json(postData);
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const [affectedRows] = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
   } catch (err) {
     res.status(500).json(err);
   }

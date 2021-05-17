@@ -1,18 +1,54 @@
+<div class="container-fluid">
+<div class="card text-center">
+  <div class="card-header">
+    <div>
+      <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
 
+    </div>
 
-<div id="fullscreen_bg" class="fullscreen_bg"/>
+  </div>
+  <form id="login-form" class="card-body">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+      </div>
+      <input
+        type="text"
+        id="username-login"
+        name=""
+        class="form-control"
+        placeholder="username"
+      />
+    </div><br />
 
-<div class="container">
-
-	<form class="form-signin">
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
-		<input type="password" class="form-control" placeholder="Password" required="">
-		<button class="btn btn-lg btn-primary btn-block" type="submit">
-			Sign In
-		</button>
-	</form>
-
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+      </div>
+      <input
+        type="Password"
+        id="password-login"
+        name=""
+        class="form-control"
+        placeholder="password"
+      />
+    </div><br />
+    <div class="text-center">
+    <button type="submit" class="btn btn-success" style="width:200px"><span
+        class="glyphicon glyphicon-off" 
+      ></span>
+      Login</button>
+      </div>
+  </form>
+        <br>
+        
+    <center><div
+        style="border:1px solid black;height:1px;width:300px;"
+      ></div></center><br />
+    <div class="text-center">
+      <p>Don't have an Account? <a href="/signup">Sign Up Here</a></p>
+    </div>
 </div>
+  </div>
 
 <script src="/js/login.js"></script>
