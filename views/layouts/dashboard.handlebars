@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
+    <title>Document</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -15,10 +15,11 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
-  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
-</head>
+    <link rel="stylesheet" href="../../public/css/style.css" />
 
-<body class="flex-column min-100-vh">
+  </head>
+  <body>
+    <body class="flex-column min-100-vh">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand">Tech_Blog</a>
         <button
@@ -46,17 +47,10 @@
           </ul>
         </div>
       </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-  </header>
 
-  <main class="col-auto">
-    {{{body}}}
+      <main class="col-auto">
+   {{{body}}}
   </main>
-
-  <footer class="footer flex-row justify-center">
-    <a href="/dashboard/new">➕ New Post</a>
-  </footer>
 </body>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

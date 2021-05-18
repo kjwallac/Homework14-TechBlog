@@ -1,17 +1,26 @@
+<div class="jumbotron jumbotron-fluid" style="background-image: url(https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%;">
+  <div class="container">
+    <h1 class="display-4" style="color:smoke; font-weight: bold; text-shadow: 1px 1px rgb(183, 183, 183)">Computers & Coffee</h1>
+    <h4 class="lead" style="color:whitesmoke; text-shadow: 1px 1px rgb(183, 183, 183)">I'll put my opinions here. You can read them.. or not.</h4>
+  </div>
+</div>
 <div class="posts">
   {{#each posts}}
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>
+        <i class="fas fa-coffee"></i>
         <a href="/posts/{{id}}">{{title}}</a>
       </h2>
       <div>
-        Posted by {{User.username}} on {{format_date createdAt}}
+        <i class="fas fa-laptop"></i> Posted by {{User.username}} on {{format_date createdAt}}
       </div>
     </div>
     <div class="card-body">
       {{body}}
     </div>
   </article>
+        <br/>
+
   {{/each}}
 </div>
